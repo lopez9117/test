@@ -9,6 +9,12 @@ use DB;
 
 class SitesController extends Controller
 {
+
+
+   function __construct(){
+
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,10 @@ class SitesController extends Controller
      */
     public function index()
     {
-        //
+
+               
+             
+
              $sitios = site::all();
              return view('sites.home', compact('sitios'));
     }

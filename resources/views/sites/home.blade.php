@@ -50,7 +50,7 @@
               <th>
               <p><a href="{{route('sites.show',$sitio->id)}}" class="btn btn-primary" role="button">Ver Sitio</a></p>
               
-            <p><a href="{{route('sites.edit',$sitio->id)}}" class="btn btn-primary" role="button">Editar Sitio</a></p>
+            <p><a href="{{route('sites.edit',$sitio->id)}}" class="btn btn-info" role="button">Editar Sitio</a></p>
               
                  <form style="display: inline;" method="POST" action="{{route('sites.destroy',$sitio->id)}}">
                   {!!csrf_field()!!}
