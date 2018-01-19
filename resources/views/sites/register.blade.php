@@ -20,15 +20,6 @@
         </div>
       </section> 
        </div>
-
-       
-       <div class="col-md-8 col-md-offset-2">
-      <section>
-          <input type="file">
-            <p><a href="" class="btn btn-primary" role="button">Cargar Masivamente</a></p>
-      </section>
-      </div>
-               
        
      </div>
 </div>

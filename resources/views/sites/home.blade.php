@@ -26,6 +26,7 @@
 
         <div>
         <a href="{{route('sites.create')}}"><button class="btn btn-success">Crear Sitio</button></a>
+         <a href="{{url('upload')}}"><button class="btn btn-success">Cargar Masivamente</button></a>
         <!--datatables--><br><br>
         <table style="border:   #00FFFF  2px solid;"  class="table table-bordered" id="myTable">
           <thead>

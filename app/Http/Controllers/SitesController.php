@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\site;
 use Carbon\Carbon;
 use DB;
+use Excel;
+use Illuminate\Support\Facades\Input;
 
 class SitesController extends Controller
 {
@@ -131,26 +133,32 @@ class SitesController extends Controller
                   return redirect('sites');
     }
 
-    public function importUsers(Request $request)
-    {
-        \Excel::load($request->excel, function($reader) {
-     
-            $excel = $reader->get();
-     
-            // iteracción
-            $reader->each(function($row) {
-     
-                $user = new site;
-                $user->address = $row->address;
-                $user->latitude = $row->latitude;
-                $user->longitude = $row->longitude;
-                
-                $user->save();
-     
-            });
+      public function upload()
+         {
         
-        });
      
-        return "Terminado";
+        return view('sites.upload');
+      
+        }
+
+
+
+    public function ImportSites()
+    {
+
+
+        $file= Input::file('file');
+        $file_name = $file->getClientOriginalName();
+        $file->move('files', $file_name);
+        $sitios = Excel::load('files/'.$file_name, function($reader)
+        {
+
+            $reader->all();
+
+        })->get();
+
+     
+     
+        return  view('sites.home',compact('sitios'));
     }
 }

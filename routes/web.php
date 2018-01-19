@@ -23,6 +23,9 @@ Route::get('home', ['as' => 'home', 'uses' => 'SitesController@index']);
 
 Route::resource('sites',  'SitesController');
 
+Route::get('upload',  'SitesController@upload');
+Route::post('ImportSites',  'SitesController@ImportSites');
+
 
 
 
