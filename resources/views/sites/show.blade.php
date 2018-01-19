@@ -29,10 +29,10 @@
 <div class="col-md-8 col-md-offset-2">
  <h3>My Google Maps Demo</h3>
     <div id="map"></div>
-
+    
     <script>
       function initMap() {
-        var uluru = {lat: 4.431113, lng:-75.218829};
+        var uluru = {lat: {{ $sitios->longitude }}, lng: {{ $sitios->latitude }}};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
