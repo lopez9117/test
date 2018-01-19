@@ -28,8 +28,10 @@
 
 <div class="col-md-8 col-md-offset-2">
  <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    
+    <div id="map" style=" height: 400px;
+        width: 100%;
+"></div>
+
     <script>
       function initMap() {
         var uluru = {lat: {{ $sitios->longitude }}, lng: {{ $sitios->latitude }}};
