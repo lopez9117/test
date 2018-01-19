@@ -49,11 +49,9 @@
               <th>{{$sitio->longitude}}</th>
               <th>
               <p><a href="{{route('sites.show',$sitio->id)}}" class="btn btn-primary" role="button">Ver Sitio</a></p>
-              </th>
-              <th>
+              
             <p><a href="{{route('sites.edit',$sitio->id)}}" class="btn btn-primary" role="button">Editar Sitio</a></p>
-              </th>
-              <th>
+              
                  <form style="display: inline;" method="POST" action="{{route('sites.destroy',$sitio->id)}}">
                   {!!csrf_field()!!}
                   {!!method_field('DELETE')!!}
