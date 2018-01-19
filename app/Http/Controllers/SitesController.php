@@ -52,7 +52,7 @@ class SitesController extends Controller
 
         //Redireccionar
 
-        return redirect()->route('sites');
+        return redirect('sites');
     }
 
     /**
@@ -64,6 +64,13 @@ class SitesController extends Controller
     public function show($id)
     {
         //
+
+
+        $sitios = site::find($id);
+
+       // dd($id);
+        
+        return view('sites.show', compact('sitios'));
     }
 
     /**
@@ -75,7 +82,9 @@ class SitesController extends Controller
     public function edit($id)
     {
         //
+       
         $sitios = site::find($id);
+
         return view('sites.edit', compact('sitios'));
     }
 
@@ -89,6 +98,12 @@ class SitesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $sitio = site::find($id);
+        $sitio->address  = $request->address;
+        $sitio->latitude = $request->latitude;
+        $sitio->longitude  = $request->longitude;
+        $sitio->save();
+        return redirect('sites');
     }
 
     /**
@@ -104,7 +119,7 @@ class SitesController extends Controller
                   DB::table('sites')->where('id', $id)->delete();
           
                   //Retornando Usuario
-                  return redirect()->route('sites');
+                  return redirect('sites');
     }
 
     public function importUsers(Request $request)

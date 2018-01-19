@@ -47,21 +47,14 @@
               <th>{{$sitio->address}}</th>
               <th>{{$sitio->latitude}}</th>
               <th>{{$sitio->longitude}}</th>
-              
               <th>
-                <form style="display: inline;" method="POST" action="{{route('sites.show',$sitio->id)}}">
-                  {!!csrf_field()!!}
-                  {!!method_field('SHOW')!!}
-                  <button type="submit" class="btn btn-success">Ver</button>
-                </form>
-              
-                <form style="display: inline;" method="PUT" action="{{route('sites.edit',$sitio->id)}}">
-                  {!!csrf_field()!!}
-                  {!!method_field('PUT')!!}
-                  <button type="submit" class="btn btn-info">Editar</button>
-                </form>
-              
-                <form style="display: inline;" method="POST" action="{{route('sites.destroy',$sitio->id)}}">
+              <p><a href="{{route('sites.show',$sitio->id)}}" class="btn btn-primary" role="button">Ver Sitio</a></p>
+              </th>
+              <th>
+            <p><a href="{{route('sites.edit',$sitio->id)}}" class="btn btn-primary" role="button">Editar Sitio</a></p>
+              </th>
+              <th>
+                 <form style="display: inline;" method="POST" action="{{route('sites.destroy',$sitio->id)}}">
                   {!!csrf_field()!!}
                   {!!method_field('DELETE')!!}
                   <button type="submit" class="btn btn-danger">Eliminar</button>

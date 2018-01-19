@@ -18,12 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('home', ['as' => 'home', 'uses' => 'SitesController@index']);
-Route::get('sites', ['as' => 'sites', 'uses' => 'SitesController@index']);
-Route::delete('sites/{id}', ['as' => 'sites.destroy', 'uses' => 'SitesController@destroy']);
-Route::get('crearsite', ['as' => 'sites.create', 'uses' => 'SitesController@create']);
-Route::get('versite', ['as' => 'sites.show', 'uses' => 'SitesController@show']);
-Route::get('editarsite', ['as' => 'sites.edit', 'uses' => 'SitesController@edit']);
-Route::post('guardarsite', ['as' => 'sites.store', 'uses' => 'SitesController@store']);
+
+
+
+Route::resource('sites',  'SitesController');
+
+
+
 
 
 	

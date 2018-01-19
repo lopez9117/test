@@ -14,7 +14,7 @@
 
             {!! Form::model($sitios, ['route' => ['sites.update', $sitios->id], 'method' => 'PUT']) !!}
 			
-			@include('form')
+		      	@include('form')
 			
             {!! Form::close() !!} 
 
