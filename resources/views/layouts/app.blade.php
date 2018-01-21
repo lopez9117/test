@@ -12,6 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style> 
+        .error{
+            color:red;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

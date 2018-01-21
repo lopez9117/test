@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use DB;
 use Excel;
 use Illuminate\Support\Facades\Input;
+use App\Http\Requests\CreateSitesRequest;
 
 class SitesController extends Controller
 {
@@ -49,7 +50,7 @@ class SitesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateSitesRequest $request)
     {
         //
 
@@ -109,6 +110,7 @@ class SitesController extends Controller
     public function update(Request $request, $id)
     {
         //
+
         $sitio = site::find($id);
         $sitio->address  = $request->address;
         $sitio->latitude = $request->latitude;
