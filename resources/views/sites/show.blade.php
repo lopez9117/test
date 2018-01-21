@@ -34,7 +34,7 @@
 
     <script>
       function initMap() {
-        var uluru = {lat: {{ $sitios->longitude }}, lng: {{ $sitios->latitude }}};
+        var uluru = {lat: {{ $sitios->latitude }}, lng: {{ $sitios->longitude }}};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: uluru
